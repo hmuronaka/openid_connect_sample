@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, flash: {error: e.message}
   end
 
-  protect_from_forgery
+  #protect_from_forgery
+  skip_before_filter :verify_authenticity_token
 end
