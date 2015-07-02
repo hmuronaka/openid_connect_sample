@@ -9,7 +9,7 @@
   <%= text_field_tag :response_type, "token" %><br>
 
   nonce:
-  <%= text_field_tag :nonce, @params[:code] %>
+  <%= text_field_tag :nonce, params[:code] %>
 
   approve:
   <%= text_field_tag :approve, "true" %>
