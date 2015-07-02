@@ -1,6 +1,7 @@
 <h1>TestResponse#index</h1>
 <p>Find me in app/views/test_response/index.html.erb</p>
 
+Access_Toekn
 <%= form_tag authorizations_path, method: :POST do |f| %>
   client_id: 
   <%= text_field_tag :client_id, "e4fb7deda80051ffda81d060fbe31a32" %> <br>
@@ -14,6 +15,20 @@
   approve:
   <%= text_field_tag :approve, "true" %>
 
-  <%= submit_tag :token %>
+  <%= submit_tag :access_token %>
+<% end %>
+
+TokenRequest
+<%= form_tag authorizations_path, method: :POST do |f| %>
+ client_id: 
+ <%= text_field_tag :client_id, "e4fb7deda80051ffda81d060fbe31a32" %> <br>
+
+ code:
+ <%= text_field_tag :code, params[:access_token] %>
+
+ grant_type:
+ <%= text_field_tag :grant_type, "authorization_code" %>
+
+ <%= submit_tag :token %>
 <% end %>
   
