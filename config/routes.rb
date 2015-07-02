@@ -1,4 +1,6 @@
 ConnectOp::Application.routes.draw do
+  get "test_response/index"
+
   resource :session,   only: :destroy
   resource :dashboard, only: :show
 
